@@ -1,18 +1,33 @@
-# shadcn/ui
+import { siteConfig } from "@/config/site"
 
-Build your component library with shadcn/ui. Copy and paste components into your apps, accessible and customizable.
-
-## Documentation
-
-Visit https://ui.shadcn.com/docs.
-
-## Getting Started
-
-```bash
-npx shadcn@latest init
-npx shadcn@latest add button
-```
-
-## License
-
-MIT
+export function SiteFooter() {
+  return (
+    <footer role="contentinfo" className="py-6 md:px-8 md:py-0">
+      <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+        <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
+          Built by{" "}
+          <a
+            href={siteConfig.links.twitter}
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            shadcn
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          . The source code is available on{" "}
+          <a
+            href={siteConfig.links.github}
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            GitHub
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          .
+        </p>
+      </div>
+    </footer>
+  )
+}
